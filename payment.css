@@ -1,0 +1,118 @@
+.payment-container {
+  width: 30%; /* Adjust the width as needed */
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 20px; /* Add padding around the container */
+  border: 1px solid #ccc; /* Add a border around the container */
+  border-radius: 10px; /* Add rounded corners to the container */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow to the container */
+  background-color: #fff; /* Set the background color of the container */
+}
+
+/* CSS for the payment form */
+.payment-form {
+  padding: 20px; /* Add padding to the form */
+}
+
+
+
+.paymentContainer {
+    display: grid;
+    place-items: center;
+    background-color: rgb(255, 255, 255);
+    height: 65vh;
+    margin: 2vmax;
+  }
+  
+  .paymentForm {
+    width: 22%;
+    height: 100%;
+  }
+  
+  .paymentForm > p {
+    font: 400 2vmax "Roboto";
+    color: rgba(0, 0, 0, 0.753);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.13);
+    padding: 1vmax 0;
+    text-align: center;
+    width: 50%;
+    margin: auto;
+  }
+  
+  .paymentForm > div {
+    display: flex;
+    align-items: center;
+    margin: 2vmax 0;
+  }
+  
+  .paymentInput {
+    padding: 1vmax 4vmax;
+    padding-right: 1vmax;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.267);
+    border-radius: 4px;
+    outline: none;
+  }
+  
+  .paymentForm > div > svg {
+    position: absolute;
+    transform: translateX(1vmax);
+    font-size: 1.6vmax;
+    color: rgba(0, 0, 0, 0.623);
+  }
+  
+  .paymentFormBtn {
+   
+    background-color: #37b67a;
+    color: white;
+    font: 300 0.9vmax "Roboto";
+    width: 100%;
+    padding: 0.8vmax;
+    cursor: pointer;
+    transition: all 0.5s;
+    border: 1px solid black;
+    border-radius: 5px;
+  }
+  
+
+
+  
+  .paymentFormBtn:hover {
+    background-color: rgb(161, 238, 167);
+    color: #141615;
+  }
+
+  
+  @media screen and (max-width: 600px) {
+    .paymentForm {
+      width: 90%;
+    }
+  
+    .paymentForm > p {
+      font: 400 8vw "Roboto";
+      padding: 4vw 0;
+      width: 60%;
+    }
+  
+    .paymentForm > div {
+      margin: 10vw 0;
+    }
+  
+    .paymentInput {
+      padding: 4vw 10vw;
+    }
+  
+    .paymentForm > div > svg {
+      font-size: 6vw;
+    }
+  
+    .paymentFormBtn {
+      font: 300 4vw "Roboto";
+      padding: 4vw;
+    }
+    .custom-input {
+      border: 1px solid #ccc; /* Add the desired border style here */
+      padding: 5px; /* Add padding as needed */
+      /* Add other styling properties as needed */
+    }
+  }
