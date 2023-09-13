@@ -1,8 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
+import MetaData from "../../more/Metadata";
+import { Typography } from "@material-ui/core";
 import axios from "axios";
 import { createOrder, clearErrors } from "../../actions/OrderAction";
+import CheckoutSteps from "./CheckoutSteps";
 // Other imports and components
 
 const Payment = ({ history }) => {
@@ -80,20 +83,34 @@ const dispatch = useDispatch();
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <CardElement
-        options={{
-          style: {
-            base: {
-              fontSize: "16px",
-              fontFamily: "Arial, sans-serif",
-            },
-          },
-        }}
-      />
-      {error && <div className="error-message">{error}</div>}
-      <button type="submit" ref={payBtn}>Pay Now</button>
-    </form>
+  <div>
+      <MetaData title="Payment" /> {/* Add MetaData component */}
+      <CheckoutSteps activeStep={2} /> {/* Add CheckoutSteps component */}
+      <div className="paymentContainer">
+        <form onSubmit={handleSubmit}>
+          <div className="paymentForm">
+            <CardElement
+              options={{
+                style: {
+                  base: {
+                    fontSize: "16px",
+                    fontFamily: "Arial, sans-serif",
+                  },
+                },
+              }}
+            />
+            {error && <div className="error-message">{error}</div>}
+          </div>
+          <button
+            type="submit"
+            ref={payBtn}
+            className="paymentFormBtn"
+          >
+            Pay - ${orderInfo && orderInfo.totalPrice}
+          </button>
+        </form>
+      </div>
+    </div>
   );
 };
 
